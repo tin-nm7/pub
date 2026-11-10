@@ -17,4 +17,6 @@ elif command -v bat >/dev/null 2>&1; then
 fi
 
 export STARSHIP_CONFIG="$ZDOTDIR/starship.toml"
-. "$HOME/.cargo/env"
+
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
