@@ -3,8 +3,8 @@ alias python=python3
 alias vim=nvim
 
 alias ls='eza --icons'
+alias la='eza -lah --icons'
 alias ll='eza -lh --icons --git'
-alias la='eza -lah --icons --git'
 alias tree='eza --tree --icons'
 compdef eza=ls
 
