@@ -15,7 +15,7 @@ elif command -v fdfind >/dev/null 2>&1; then
     export FZF_DEFAULT_COMMAND='fdfind --type f --hidden --strip-cwd-prefix'
 fi
 
-export FZF_CTR_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
