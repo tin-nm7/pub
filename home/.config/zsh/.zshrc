@@ -26,15 +26,23 @@ zstyle ':completion:*' matcher-list \
     'l:|=* r:|=*'
 
 autoload -Uz compinit
-compinit -d "$XDG_CACHE_HOME/zsh/zcompdump"
-export PATH="$HOME/.cargo/bin:$PATH"
+if [[ -n $(find "$XDG_CACHE_HOME/zsh/zcompdump" -mtime +1 2>/dev/null) ]]; then
+    compinit -d "$XDG_CACHE_HOME/zsh/zcompdump"
+else
+    compinit -C -d "$XDG_CACHE_HOME/zsh/zcompdump"
+fi
 
 # ghcup
 [ -f "/home/tin/.ghcup/env" ] && . "/home/tin/.ghcup/env"
 
 # npm
 export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+zsh-nvm-lazy-load() {
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+}
+alias nvm="zsh-nvm-lazy-load; unalias nvm; nvm"
+alias node="zsh-nvm-lazy-load; unalias node; node"
+alias npm="zsh-nvm-lazy-load; unalias npm; npm"
 
 . "$HOME/.local/share/../bin/env"
