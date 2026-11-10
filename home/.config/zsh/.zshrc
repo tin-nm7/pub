@@ -13,6 +13,8 @@ setopt AUTOCD
 setopt NOBEEP
 setopt NUMERIC_GLOB_SORT
 
+export GPG_TTY=$(tty)
+
 source "$ZDOTDIR/fzf.zsh"
 source "$ZDOTDIR/plugins.zsh"
 source "$ZDOTDIR/bindings.zsh"
