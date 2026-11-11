@@ -1,4 +1,4 @@
-# $> starship preset --force tokyo-night -o ~/.config/starship.toml 
+# Source: $> starship preset --force tokyo-night -o "$STARSHIP_CONFIG"
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
