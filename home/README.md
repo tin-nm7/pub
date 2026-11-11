@@ -45,11 +45,14 @@ Note:
 
 
 ## Commands Replacement Candidates
+```md
 `->`    Substitutes
 `<>`    Alternative
 `++`    Complementary Tools
+```
 
 ### Files & Directory
+```md
 * ls    -> eza
 * tree  -> eza --tree
 * du    -> dust
@@ -60,8 +63,10 @@ Note:
 * cat   -> bat | batcat
 * less  -> moor (formerly: moar)
 * wc    ++ tokei
+```
 
 ### Text Processing & Search
+```md
 * grep  <> rg | ripgrep
 * sed   -> sd
 * cut   -> choose
@@ -69,23 +74,30 @@ Note:
 * jq    -> jaq
 * diff  -> difftastic
 * _     ++ qsv # Adding tool for CSV
+```
 
 ### Dev
+```md
 * make  -> just
 * time  ++ hyperfine
 * man   ++ tldr
+```
 
 ### Monitoring
+```md
 * top   -> btop
 * ps    -> procs
 * lsof  <> procs
 * htop  -> btm | bottom
 * ping  -> gping
 * ncdu  -> dua
+```
 
 ### Misc
+```md
 * cd      ++ zoxide
 * history -> atuin
 * env     ++ mise
 * ssh     <> mosh
 * hexdump -> hexyl
+```
