@@ -1,8 +1,8 @@
 # Requirements
 
-`/etc/zsh/zshenv`
+## System zshenv (`/etc/zshenv` | `/etc/zsh/zshenv`)
 ```zsh
-# /etc/zsh/zshenv: system-wide .zshenv file for zsh(1).
+# /etc/zshenv | /etc/zsh/zshenv: system-wide .zshenv file for zsh(1).
 #
 # This file is sourced on all invocations of the shell.
 # If the -f flag is present or if the NO_RCS option is
@@ -31,3 +31,61 @@ then
     export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 fi
 ```
+
+Fail-back $HOME/.zshenv in case system zshenv is not read
+```zsh
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+[[ -r $ZDOTDIR/.zshenv ]] && source "$ZDOTDIR/.zshenv"
+```
+
+Note:
+* $ZDOTDIR/.zprofile is loaded assuming terminal is run as login shell
+  Non-login and non-interactive shells will lose brew, cargo, go, etc
+
+
+## Commands Replacement Candidates
+`->`    Substitutes
+`<>`    Alternative
+`++`    Complementary Tools
+
+### Files & Directory
+* ls    -> eza
+* tree  -> eza --tree
+* du    -> dust
+* df    -> duf
+* find  <> fd | fdfind
+* cp    -> xcp
+* rm    -> rip
+* cat   -> bat | batcat
+* less  -> moor (formerly: moar)
+* wc    ++ tokei
+
+### Text Processing & Search
+* grep  <> rg | ripgrep
+* sed   -> sd
+* cut   -> choose
+* sort  -> gsort
+* jq    -> jaq
+* diff  -> difftastic
+* _     ++ qsv # Adding tool for CSV
+
+### Dev
+* make  -> just
+* time  ++ hyperfine
+* man   ++ tldr
+
+### Monitoring
+* top   -> btop
+* ps    -> procs
+* lsof  <> procs
+* htop  -> btm | bottom
+* ping  -> gping
+* ncdu  -> dua
+
+### Misc
+* cd      ++ zoxide
+* history -> atuin
+* env     ++ mise
+* ssh     <> mosh
+* hexdump -> hexyl
