@@ -14,10 +14,12 @@ if (( $+commands[eza] )); then
 	compdef eza=ls
 fi
 
-if ! (( $+commands[bat] )) && (( $+commands[batcat] )); then
+if (( $+commands[bat] )); then
+	alias cat=bat
+elif (( $+commands[batcat] )); then
 	alias bat=batcat
+	alias cat=batcat
 fi
-(( $+commands[bat] )) && alias cat=bat
 
 (( $+commands[fdfind] )) && alias fd=fdfind
 
