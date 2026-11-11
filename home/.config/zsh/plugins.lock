@@ -1,0 +1,10 @@
+# Pinned zsh plugins: <author>/<repo> <commit>
+# Plugins are loaded in listed order
+# `zsh-plugin-install` to install missing plugins
+# `zsh-plugin-add <author/repo | github url>` to append a new plugin
+# `zsh-plugin-update [plugin...]` to look for updates
+zsh-users/zsh-completions                  989b23277ab33e8d5e82df6aed936e846db9d8b8
+zsh-users/zsh-autosuggestions              85919cd1ffa7d2d5412f6d3fe437ebdbeeec4fc5
+jeffreytse/zsh-vi-mode                     91cafe4a09b6670cb8e761aa413e5f7b9e00816f
+zdharma-continuum/fast-syntax-highlighting 4672ad5dd9ad68a7effc1476d65afb7c584ce2b3
+zsh-users/zsh-history-substring-search     a0bdb0d47dbaba31dba2db7af8c48a5d9c74049a
